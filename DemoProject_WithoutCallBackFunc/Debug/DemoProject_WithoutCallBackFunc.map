@@ -1,0 +1,476 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.7                     
+******************************************************************************
+>> Linked Tue Sep  5 22:34:04 2023
+
+OUTPUT FILE NAME:   <DemoProject_WithoutCallBackFunc.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00001969
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00001e63  0003e19d  R  X
+  SRAM                  20000000   00008000  0000027d  00007d83  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00001e68   00001e68    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    0000176c   0000176c    r-x .text
+  000019d8    000019d8    00000423   00000423    r-- .const
+  00001e00    00001e00    00000068   00000068    r-- .cinit
+20000000    20000000    0000027d   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+  20000200    20000200    0000007d   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    0000176c     
+                  0000026c    00000a30     GPIO.obj (.text)
+                  00000c9c    000004ec     GPTM.obj (.text)
+                  00001188    00000274     NVIC.obj (.text)
+                  000013fc    0000026c     SystemControl.obj (.text)
+                  00001668    000000d0     Button.obj (.text)
+                  00001738    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  000017d4    00000096                                   : ull_div_t2.asm.obj (.text)
+                  0000186a    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  000018d2    00000002                                   : div0.asm.obj (.text)
+                  000018d4    00000050     Led.obj (.text)
+                  00001924    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00001968    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  0000199c    0000001a     main.obj (.text)
+                  000019b6    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  000019c4    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  000019d0    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  000019d4    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    000019d8    00000423     
+                  000019d8    00000060     GPTM.obj (.const:GPTM_TimerMode)
+                  00001a38    00000030     GPIO_config.obj (.const:GPIO_TimerAFSELConfig_ArrPtrStruct)
+                  00001a68    00000030     GPTM.obj (.const:GPTM_ConfigurationRegisters)
+                  00001a98    00000030     GPTM.obj (.const:GPTM_Control)
+                  00001ac8    00000030     GPTM.obj (.const:GPTM_ICRRegisters)
+                  00001af8    00000030     GPTM.obj (.const:GPTM_IMRRegisters)
+                  00001b28    00000030     GPTM.obj (.const:GPTM_RISRegisters)
+                  00001b58    00000020     NVIC.obj (.const:Interrupt_Priority_Register)
+                  00001b78    00000018     GPIO.obj (.const:GPIO_AlternateFunctionSelect_Registers)
+                  00001b90    00000018     GPIO.obj (.const:GPIO_AnalogModeSelect_Registers)
+                  00001ba8    00000018     GPIO.obj (.const:GPIO_Data_Registers)
+                  00001bc0    00000018     GPIO.obj (.const:GPIO_DigitalEnable_Registers)
+                  00001bd8    00000018     GPIO.obj (.const:GPIO_Direction_Registers)
+                  00001bf0    00000018     GPIO.obj (.const:GPIO_InterruptBothEdges_Registers)
+                  00001c08    00000018     GPIO.obj (.const:GPIO_InterruptClear_Registers)
+                  00001c20    00000018     GPIO.obj (.const:GPIO_InterruptEvent_Registers)
+                  00001c38    00000018     GPIO.obj (.const:GPIO_InterruptMask_Registers)
+                  00001c50    00000018     GPIO.obj (.const:GPIO_InterruptSense_Registers)
+                  00001c68    00000018     GPIO.obj (.const:GPIO_LOCK_Registers)
+                  00001c80    00000018     GPIO.obj (.const:GPIO_NVICInterruptNum)
+                  00001c98    00000018     GPIO.obj (.const:GPIO_PortControl_Registers)
+                  00001cb0    00000018     GPIO.obj (.const:GPIO_Port_Commit)
+                  00001cc8    00000018     GPIO.obj (.const:GPIO_PullUp_Registers)
+                  00001ce0    00000018     GPTM.obj (.const:GPTM_32BitTimerB_IntervalLoad)
+                  00001cf8    00000018     GPTM.obj (.const:GPTM_32BitTimerB_Match)
+                  00001d10    00000018     GPTM.obj (.const:GPTM_32_64_BitTimerA_IntervalLoad)
+                  00001d28    00000018     GPTM.obj (.const:GPTM_32_64_BitTimerA_Match)
+                  00001d40    00000010     NVIC.obj (.const:Clear_Pending_Register)
+                  00001d50    00000010     GPIO_config.obj (.const:GPIO_InterruptSource_ArrPtrStruct)
+                  00001d60    00000010     NVIC.obj (.const:Interrupt_Clear_Registers)
+                  00001d70    00000010     NVIC.obj (.const:Interrupt_Enable_Registers)
+                  00001d80    00000010     NVIC.obj (.const:Set_Pending_Register)
+                  00001d90    0000000f     SystemControl.obj (.const:.string:SC_SYSDIV)
+                  00001d9f    00000008     SystemControl.obj (.const:.string:SC_PWMDIV)
+                  00001da7    00000004     GPTM_config.obj (.const:GPTM_Config_32BitTimer0A)
+                  00001dab    00000004     GPTM_config.obj (.const:GPTM_Config_32BitTimer0B)
+                  00001daf    00000004     GPTM_config.obj (.const:GPTM_Config_32BitTimer1A)
+                  00001db3    00000004     GPTM_config.obj (.const:GPTM_Config_32BitTimer1B)
+                  00001db7    00000004     GPTM_config.obj (.const:GPTM_Config_32BitTimer2A)
+                  00001dbb    00000004     GPTM_config.obj (.const:GPTM_Config_32BitTimer2B)
+                  00001dbf    00000004     GPTM_config.obj (.const:GPTM_Config_32BitTimer3A)
+                  00001dc3    00000004     GPTM_config.obj (.const:GPTM_Config_32BitTimer3B)
+                  00001dc7    00000004     GPTM_config.obj (.const:GPTM_Config_32BitTimer4A)
+                  00001dcb    00000004     GPTM_config.obj (.const:GPTM_Config_32BitTimer4B)
+                  00001dcf    00000004     GPTM_config.obj (.const:GPTM_Config_32BitTimer5A)
+                  00001dd3    00000004     GPTM_config.obj (.const:GPTM_Config_32BitTimer5B)
+                  00001dd7    00000003     GPIO_config.obj (.const:Timer0A_32_64Bit)
+                  00001dda    00000003     GPIO_config.obj (.const:Timer0B_32_64Bit)
+                  00001ddd    00000003     GPIO_config.obj (.const:Timer1A_32_64Bit)
+                  00001de0    00000003     GPIO_config.obj (.const:Timer1B_32_64Bit)
+                  00001de3    00000003     GPIO_config.obj (.const:Timer2A_32_64Bit)
+                  00001de6    00000003     GPIO_config.obj (.const:Timer2B_32_64Bit)
+                  00001de9    00000003     GPIO_config.obj (.const:Timer3A_32_64Bit)
+                  00001dec    00000003     GPIO_config.obj (.const:Timer3B_32_64Bit)
+                  00001def    00000003     GPIO_config.obj (.const:Timer4A_32_64Bit)
+                  00001df2    00000003     GPIO_config.obj (.const:Timer4B_32_64Bit)
+                  00001df5    00000003     GPIO_config.obj (.const:Timer5A_32_64Bit)
+                  00001df8    00000003     GPIO_config.obj (.const:Timer5B_32_64Bit)
+
+.cinit     0    00001e00    00000068     
+                  00001e00    00000055     (.cinit..data.load) [load image, compression = lzss]
+                  00001e55    00000003     --HOLE-- [fill = 0]
+                  00001e58    00000008     (__TI_handler_table)
+                  00001e60    00000008     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.data      0    20000200    0000007d     UNINITIALIZED
+                  20000200    00000030     GPTM_config.obj (.data:GPTM_Config_ArrPtrStruct)
+                  20000230    00000018     GPIO.obj (.data:EXTI_Callback)
+                  20000248    00000018     GPIO.obj (.data:GPIO_BIT_BAND_Registers)
+                  20000260    00000004     GPTM.obj (.data)
+                  20000264    00000003     Button.obj (.data)
+                  20000267    00000003     GPIO_config.obj (.data:InterruptSourceFallingEdge)
+                  2000026a    00000003     GPIO_config.obj (.data:InterruptSourceFallingLevel)
+                  2000026d    00000003     GPIO_config.obj (.data:InterruptSourceRisingEdge)
+                  20000270    00000003     GPIO_config.obj (.data:InterruptSourceRisingLevel)
+                  20000273    00000002     GPIO_config.obj (.data:GPIO_ConfigurePin_PF0)
+                  20000275    00000002     GPIO_config.obj (.data:GPIO_ConfigurePin_PF1)
+                  20000277    00000002     GPIO_config.obj (.data:GPIO_ConfigurePin_PF2)
+                  20000279    00000002     GPIO_config.obj (.data:GPIO_ConfigurePin_PF3)
+                  2000027b    00000002     GPIO_config.obj (.data:GPIO_ConfigurePin_PF4)
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    .\
+       GPIO.obj                       2608   360       48     
+       GPTM.obj                       1260   432       4      
+       NVIC.obj                       628    96        0      
+       SystemControl.obj              620    23        0      
+       tm4c123gh6pm_startup_ccs.obj   12     620       0      
+       Button.obj                     208    0         3      
+       GPIO_config.obj                0      100       22     
+       GPTM_config.obj                0      48        48     
+       Led.obj                        80     0         0      
+       main.obj                       26     0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         5442   1679      125    
+                                                              
+    D:\CodeComposer\ccs\tools\compiler\ti-cgt-arm_20.2.7.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.asm.obj              156    0         0      
+       ull_div_t2.asm.obj             150    0         0      
+       copy_decompress_lzss.c.obj     104    0         0      
+       autoinit.c.obj                 68     0         0      
+       boot_cortex_m.c.obj            52     0         0      
+       copy_decompress_none.c.obj     14     0         0      
+       exit.c.obj                     4      0         0      
+       pre_init.c.obj                 4      0         0      
+       div0.asm.obj                   2      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         554    0         0      
+                                                              
+       Stack:                         0      0         512    
+       Linker Generated:              0      101       0      
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   5996   1780      637    
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00001e60 records: 1, size/record: 8, table size: 8
+	.data: load addr=00001e00, load size=00000055 bytes, run addr=20000200, run size=0000007d bytes, compression=lzss
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00001e58 records: 2, size/record: 4, table size: 8
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                 
+-------   ----                                 
+20000264  Button1_PressedFlag                  
+20000265  Button2_PressedFlag                  
+0000167d  ButtonInitializations                
+000019d5  C$$EXIT                              
+000002e1  EXTIAIntHandler                      
+000002f1  EXTIBIntHandler                      
+00000301  EXTICIntHandler                      
+00000311  EXTIDIntHandler                      
+00000321  EXTIEIntHandler                      
+00001669  EXTIFIntHandler                      
+20000248  GPIO_BIT_BAND_Registers              
+0000048b  GPIO_ConfigureAlternateFunctionSelect
+0000051d  GPIO_ConfigureAnalogModeSelect       
+0000069d  GPIO_ConfigureCommit                 
+0000060d  GPIO_ConfigureDigitalEnable          
+000007a5  GPIO_ConfigureInputPin               
+00000a21  GPIO_ConfigureInterruptMask          
+00000ab1  GPIO_ConfigureInterruptSource        
+0000075b  GPIO_ConfigureOutputPin              
+20000273  GPIO_ConfigurePin_PF0                
+20000275  GPIO_ConfigurePin_PF1                
+20000277  GPIO_ConfigurePin_PF2                
+20000279  GPIO_ConfigurePin_PF3                
+2000027b  GPIO_ConfigurePin_PF4                
+000005ad  GPIO_ConfigurePortControl            
+000009d9  GPIO_EXTIClearInterrupt              
+0000096b  GPIO_EnableAFSEL_CAN                 
+000008bd  GPIO_EnableAFSEL_GPTM                
+00000909  GPIO_EnableAFSEL_UART                
+00001d50  GPIO_InterruptSource_ArrPtrStruct    
+000007f3  GPIO_ReadBitBandBits                 
+000003bd  GPIO_SetData                         
+00000719  GPIO_SetInputStatus                  
+00000331  GPIO_SetPinStatus                    
+00001a38  GPIO_TimerAFSELConfig_ArrPtrStruct   
+00000883  GPIO_ToggleBitBandBits               
+00000449  GPIO_TogglePinValue                  
+0000081d  GPIO_WriteBitBandBits                
+00001da7  GPTM_Config_32BitTimer0A             
+00001dab  GPTM_Config_32BitTimer0B             
+00001daf  GPTM_Config_32BitTimer1A             
+00001db3  GPTM_Config_32BitTimer1B             
+00001db7  GPTM_Config_32BitTimer2A             
+00001dbb  GPTM_Config_32BitTimer2B             
+00001dbf  GPTM_Config_32BitTimer3A             
+00001dc3  GPTM_Config_32BitTimer3B             
+00001dc7  GPTM_Config_32BitTimer4A             
+00001dcb  GPTM_Config_32BitTimer4B             
+00001dcf  GPTM_Config_32BitTimer5A             
+00001dd3  GPTM_Config_32BitTimer5B             
+20000200  GPTM_Config_ArrPtrStruct             
+00001001  GPTM_GenerateDelay                   
+000010b1  GPTM_GenerateDelay_Interrupt         
+00000e95  GPTM_GeneratePWM                     
+00000f3d  GPTM_InitializeDelayMode             
+00000d83  GPTM_InitializePWM                   
+00000d6d  GPTM_RegisterCallbackFunction        
+0000199d  GPTM_WideSubTimer0A_Handler          
+00000d7d  GPTM_WideSubTimer0B_Handler          
+00000d7f  GPTM_WideSubTimer1A_Handler          
+00000d81  GPTM_WideSubTimer1B_Handler          
+00001157  GPTM_WideSubTimerA_ClearInterrupt    
+20000267  InterruptSourceFallingEdge           
+2000026a  InterruptSourceFallingLevel          
+2000026d  InterruptSourceRisingEdge            
+20000270  InterruptSourceRisingLevel           
+000018d5  Led_InitializeAllLeds                
+00001905  Leds_ToggleRedLed                    
+00001295  NVIC_AssignPriority                  
+000011c1  NVIC_Clear_Interrupt                 
+00001231  NVIC_Clear_Pending                   
+00001189  NVIC_Enable_Interrupt                
+00001269  NVIC_SetPriorityGrouping             
+000011f9  NVIC_Set_Pending                     
+00001697  ReadButtonState                      
+20000266  RedLedState                          
+00000c63  RegisterCallbackFunction             
+000019c5  ResetISR                             
+00001601  SC_ADC_ClkIntialization              
+0000161d  SC_CAN_ClkIntialization              
+000015d3  SC_GetPWMFrequency                   
+00001537  SC_GetSystemClock                    
+00001417  SC_Initialization                    
+0000159f  SC_PWMClkIntialization               
+00001d9f  SC_PWMDIV                            
+00001d90  SC_SYSDIV                            
+00001dd7  Timer0A_32_64Bit                     
+00001dda  Timer0B_32_64Bit                     
+00001ddd  Timer1A_32_64Bit                     
+00001de0  Timer1B_32_64Bit                     
+00001de3  Timer2A_32_64Bit                     
+00001de6  Timer2B_32_64Bit                     
+00001de9  Timer3A_32_64Bit                     
+00001dec  Timer3B_32_64Bit                     
+00001def  Timer4A_32_64Bit                     
+00001df2  Timer4B_32_64Bit                     
+00001df5  Timer5A_32_64Bit                     
+00001df8  Timer5B_32_64Bit                     
+20000200  __STACK_END                          
+00000200  __STACK_SIZE                         
+20000200  __STACK_TOP                          
+00001e60  __TI_CINIT_Base                      
+00001e68  __TI_CINIT_Limit                     
+00001e58  __TI_Handler_Table_Base              
+00001e60  __TI_Handler_Table_Limit             
+00001925  __TI_auto_init_nobinit_nopinit       
+0000186b  __TI_decompress_lzss                 
+000019b7  __TI_decompress_none                 
+ffffffff  __TI_pprof_out_hndl                  
+ffffffff  __TI_prof_data_size                  
+ffffffff  __TI_prof_data_start                 
+00000000  __TI_static_base__                   
+000018d3  __aeabi_idiv0                        
+000018d3  __aeabi_ldiv0                        
+00001739  __aeabi_memcpy                       
+00001739  __aeabi_memcpy4                      
+00001739  __aeabi_memcpy8                      
+000017d5  __aeabi_uldivmod                     
+ffffffff  __binit__                            
+ffffffff  __c_args__                           
+UNDEFED   __mpu_init                           
+20000000  __stack                              
+20000000  __start___llvm_prf_cnts              
+20000000  __stop___llvm_prf_cnts               
+00001969  _c_int00_noargs                      
+UNDEFED   _system_post_cinit                   
+000019d1  _system_pre_init                     
+000019d5  abort                                
+ffffffff  binit                                
+00000000  g_pfnVectors                         
+000019a9  main                                 
+00001739  memcpy                               
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                 
+-------   ----                                 
+00000000  __TI_static_base__                   
+00000000  g_pfnVectors                         
+00000200  __STACK_SIZE                         
+000002e1  EXTIAIntHandler                      
+000002f1  EXTIBIntHandler                      
+00000301  EXTICIntHandler                      
+00000311  EXTIDIntHandler                      
+00000321  EXTIEIntHandler                      
+00000331  GPIO_SetPinStatus                    
+000003bd  GPIO_SetData                         
+00000449  GPIO_TogglePinValue                  
+0000048b  GPIO_ConfigureAlternateFunctionSelect
+0000051d  GPIO_ConfigureAnalogModeSelect       
+000005ad  GPIO_ConfigurePortControl            
+0000060d  GPIO_ConfigureDigitalEnable          
+0000069d  GPIO_ConfigureCommit                 
+00000719  GPIO_SetInputStatus                  
+0000075b  GPIO_ConfigureOutputPin              
+000007a5  GPIO_ConfigureInputPin               
+000007f3  GPIO_ReadBitBandBits                 
+0000081d  GPIO_WriteBitBandBits                
+00000883  GPIO_ToggleBitBandBits               
+000008bd  GPIO_EnableAFSEL_GPTM                
+00000909  GPIO_EnableAFSEL_UART                
+0000096b  GPIO_EnableAFSEL_CAN                 
+000009d9  GPIO_EXTIClearInterrupt              
+00000a21  GPIO_ConfigureInterruptMask          
+00000ab1  GPIO_ConfigureInterruptSource        
+00000c63  RegisterCallbackFunction             
+00000d6d  GPTM_RegisterCallbackFunction        
+00000d7d  GPTM_WideSubTimer0B_Handler          
+00000d7f  GPTM_WideSubTimer1A_Handler          
+00000d81  GPTM_WideSubTimer1B_Handler          
+00000d83  GPTM_InitializePWM                   
+00000e95  GPTM_GeneratePWM                     
+00000f3d  GPTM_InitializeDelayMode             
+00001001  GPTM_GenerateDelay                   
+000010b1  GPTM_GenerateDelay_Interrupt         
+00001157  GPTM_WideSubTimerA_ClearInterrupt    
+00001189  NVIC_Enable_Interrupt                
+000011c1  NVIC_Clear_Interrupt                 
+000011f9  NVIC_Set_Pending                     
+00001231  NVIC_Clear_Pending                   
+00001269  NVIC_SetPriorityGrouping             
+00001295  NVIC_AssignPriority                  
+00001417  SC_Initialization                    
+00001537  SC_GetSystemClock                    
+0000159f  SC_PWMClkIntialization               
+000015d3  SC_GetPWMFrequency                   
+00001601  SC_ADC_ClkIntialization              
+0000161d  SC_CAN_ClkIntialization              
+00001669  EXTIFIntHandler                      
+0000167d  ButtonInitializations                
+00001697  ReadButtonState                      
+00001739  __aeabi_memcpy                       
+00001739  __aeabi_memcpy4                      
+00001739  __aeabi_memcpy8                      
+00001739  memcpy                               
+000017d5  __aeabi_uldivmod                     
+0000186b  __TI_decompress_lzss                 
+000018d3  __aeabi_idiv0                        
+000018d3  __aeabi_ldiv0                        
+000018d5  Led_InitializeAllLeds                
+00001905  Leds_ToggleRedLed                    
+00001925  __TI_auto_init_nobinit_nopinit       
+00001969  _c_int00_noargs                      
+0000199d  GPTM_WideSubTimer0A_Handler          
+000019a9  main                                 
+000019b7  __TI_decompress_none                 
+000019c5  ResetISR                             
+000019d1  _system_pre_init                     
+000019d5  C$$EXIT                              
+000019d5  abort                                
+00001a38  GPIO_TimerAFSELConfig_ArrPtrStruct   
+00001d50  GPIO_InterruptSource_ArrPtrStruct    
+00001d90  SC_SYSDIV                            
+00001d9f  SC_PWMDIV                            
+00001da7  GPTM_Config_32BitTimer0A             
+00001dab  GPTM_Config_32BitTimer0B             
+00001daf  GPTM_Config_32BitTimer1A             
+00001db3  GPTM_Config_32BitTimer1B             
+00001db7  GPTM_Config_32BitTimer2A             
+00001dbb  GPTM_Config_32BitTimer2B             
+00001dbf  GPTM_Config_32BitTimer3A             
+00001dc3  GPTM_Config_32BitTimer3B             
+00001dc7  GPTM_Config_32BitTimer4A             
+00001dcb  GPTM_Config_32BitTimer4B             
+00001dcf  GPTM_Config_32BitTimer5A             
+00001dd3  GPTM_Config_32BitTimer5B             
+00001dd7  Timer0A_32_64Bit                     
+00001dda  Timer0B_32_64Bit                     
+00001ddd  Timer1A_32_64Bit                     
+00001de0  Timer1B_32_64Bit                     
+00001de3  Timer2A_32_64Bit                     
+00001de6  Timer2B_32_64Bit                     
+00001de9  Timer3A_32_64Bit                     
+00001dec  Timer3B_32_64Bit                     
+00001def  Timer4A_32_64Bit                     
+00001df2  Timer4B_32_64Bit                     
+00001df5  Timer5A_32_64Bit                     
+00001df8  Timer5B_32_64Bit                     
+00001e58  __TI_Handler_Table_Base              
+00001e60  __TI_CINIT_Base                      
+00001e60  __TI_Handler_Table_Limit             
+00001e68  __TI_CINIT_Limit                     
+20000000  __stack                              
+20000000  __start___llvm_prf_cnts              
+20000000  __stop___llvm_prf_cnts               
+20000200  GPTM_Config_ArrPtrStruct             
+20000200  __STACK_END                          
+20000200  __STACK_TOP                          
+20000248  GPIO_BIT_BAND_Registers              
+20000264  Button1_PressedFlag                  
+20000265  Button2_PressedFlag                  
+20000266  RedLedState                          
+20000267  InterruptSourceFallingEdge           
+2000026a  InterruptSourceFallingLevel          
+2000026d  InterruptSourceRisingEdge            
+20000270  InterruptSourceRisingLevel           
+20000273  GPIO_ConfigurePin_PF0                
+20000275  GPIO_ConfigurePin_PF1                
+20000277  GPIO_ConfigurePin_PF2                
+20000279  GPIO_ConfigurePin_PF3                
+2000027b  GPIO_ConfigurePin_PF4                
+ffffffff  __TI_pprof_out_hndl                  
+ffffffff  __TI_prof_data_size                  
+ffffffff  __TI_prof_data_start                 
+ffffffff  __binit__                            
+ffffffff  __c_args__                           
+ffffffff  binit                                
+UNDEFED   __mpu_init                           
+UNDEFED   _system_post_cinit                   
+
+[132 symbols]

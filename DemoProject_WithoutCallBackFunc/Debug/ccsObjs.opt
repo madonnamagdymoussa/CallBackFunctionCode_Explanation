@@ -1,0 +1,13 @@
+"./Button.obj"
+"./GPIO.obj"
+"./GPIO_config.obj"
+"./GPTM.obj"
+"./GPTM_config.obj"
+"./Led.obj"
+"./NVIC.obj"
+"./SystemControl.obj"
+"./SystemControl_Config.obj"
+"./main.obj"
+"./tm4c123gh6pm_startup_ccs.obj"
+"../tm4c123gh6pm.cmd"
+-llibc.a
